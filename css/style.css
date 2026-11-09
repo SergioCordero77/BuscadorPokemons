@@ -14,7 +14,7 @@ body {
     color: #333;
 }
 
-/* ===== TÍTULO ===== */
+/* ===== TÍTOL ===== */
 h1 {
     text-align: center;
     font-size: 2.8rem;
@@ -25,7 +25,7 @@ h1 {
     text-shadow: 2px 3px 0 #ffcb05;
 }
 
-/* ===== CONTENEDOR DE POKÉMON ===== */
+/* ===== CONTENIDOR DE POKÉMON ===== */
 #pokemons-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -48,7 +48,7 @@ h1 {
     overflow: hidden;
 }
 
-/* Efecto al pasar el ratón */
+/* Efecte al passar el ratolí */
 .pokemon-card:hover {
     transform: translateY(-10px) scale(1.03);
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
@@ -62,7 +62,7 @@ h1 {
     margin-bottom: 15px;
 }
 
-/* ===== IMAGEN DEL POKÉMON ===== */
+/* ===== IMATGE DEL POKÉMON ===== */
 .pokemon-card img {
     width: 150px;
     height: 150px;
@@ -76,14 +76,14 @@ h1 {
     transform: scale(1.15);
 }
 
-/* ===== INFORMACIÓN DEL POKÉMON ===== */
+/* ===== INFORMACIÓ DEL POKÉMON ===== */
 .pokemon-card p {
     font-size: 1rem;
     margin: 8px 0;
     color: #555;
 }
 
-/* ===== TIPOS DE POKÉMON ===== */
+/* ===== TIPUS DE POKÉMON ===== */
 .pokemon-card .tipo {
     display: inline-block;
     background: #e63946;
@@ -103,6 +103,45 @@ h1 {
     font-weight: bold;
     margin-bottom: 5px;
 }
+
+
+/* ===== BOTÓ DETALL ===== */
+.pokemon-card button {
+    background: linear-gradient(135deg, #e63946, #c1121f);
+    color: white;
+    border: 3px solid #ffcb05;
+    border-radius: 25px;
+    padding: 10px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-top: 15px;
+    box-shadow: 0 4px 0 #a30d18;
+    transition: all 0.2s ease;
+}
+
+/* Efecte hover */
+.pokemon-card button:hover {
+    background: linear-gradient(135deg, #ffcb05, #f4a900);
+    color: #333;
+    transform: translateY(-3px);
+    box-shadow: 0 7px 0 #c58b00;
+}
+
+/* Efecte al pulsar */
+.pokemon-card button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #a30d18;
+}
+
+/* Treure borde de enfocament per defecte i afegir un accesible */
+.pokemon-card button:focus-visible {
+    outline: 3px solid #333;
+    outline-offset: 4px;
+}
+
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 600px) {

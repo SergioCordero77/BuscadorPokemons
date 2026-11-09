@@ -18,9 +18,14 @@ const mostrarPokemons = async function(dada){
     const imatgePokemon = document.createElement("img");
     imatgePokemon.src = dadesPokemon.sprites.back_shiny;
 
+    // Botó 'Detall'
+    const botoDetall = document.createElement("button");
+    botoDetall.textContent = "Detall"
+
     // Fiquem info del pokemon a la tarjeta
     pokemonCard.appendChild(titolNom);
     pokemonCard.appendChild(imatgePokemon);
+    pokemonCard.appendChild(botoDetall);
 
     // Fiquem la tarjeta al contenidor
     cardContainer.appendChild(pokemonCard);
