@@ -51,8 +51,11 @@ const mostrarPokemons = async function(dada){
 
         // Fiquem la tarjeta al contenidor
         cardContainer.appendChild(pokemonCard);
+
+        console.log(resultat.status);
     }
     catch(error){
+        console.log(resultat.status);
         console.log(error.message);
     }
 }
@@ -76,8 +79,10 @@ const obtenirPokemons = async function(){
         for(let dada of dades.results){
             await mostrarPokemons(dada);
         }
+        console.log(resultat.status);
     }
     catch (error){ 
+        console.log(resultat.status);
         console.log(error.message);
     }
 }
