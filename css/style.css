@@ -25,12 +25,69 @@ h1 {
     text-shadow: 2px 3px 0 #ffcb05;
 }
 
+
+/* ===== SELECTOR DE RESULTATS ===== */
+
+label {
+    display: block;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Selector */
+#options {
+    display: block;
+    margin: 0 auto 35px auto;
+    padding: 12px 20px;
+    width: 180px;
+
+    background-color: white;
+    color: #e63946;
+
+    border: 3px solid #ffcb05;
+    border-radius: 15px;
+
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+
+    cursor: pointer;
+
+    box-shadow: 0 4px 0 #d4a900;
+    transition: all 0.2s ease;
+}
+
+/* Efecte hover */
+#options:hover {
+    background-color: #fff4cc;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #d4a900;
+}
+
+/* Quan seleccionem */
+#options:focus {
+    outline: 3px solid #e63946;
+    outline-offset: 3px;
+}
+
+/* Opcions del desplegable */
+#options option {
+    background-color: white;
+    color: #333;
+    font-weight: bold;
+}
+
 /* ===== CONTENIDOR DE POKÉMON ===== */
 #pokemons-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 25px;
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto;
     padding: 20px;
 }
@@ -144,28 +201,23 @@ h1 {
 
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 600px) {
-    body {
-        padding: 25px 10px;
-    }
 
-    h1 {
-        font-size: 2rem;
-        margin-bottom: 25px;
-    }
-
+@media (max-width: 1100px) {
     #pokemons-container {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    #pokemons-container {
+        grid-template-columns: repeat(2, 1fr);
         gap: 15px;
         padding: 10px;
     }
+}
 
-    .pokemon-card {
-        padding: 12px;
-    }
-
-    .pokemon-card img {
-        width: 120px;
-        height: 120px;
+@media (max-width: 400px) {
+    #pokemons-container {
+        grid-template-columns: 1fr;
     }
 }
