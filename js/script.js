@@ -49,6 +49,11 @@ const mostrarPokemons = async function(dada){
         pokemonCard.appendChild(imatgePokemon);
         pokemonCard.appendChild(botoDetall);
 
+        const url ="detail.html?name=" + dada.name; 
+        botoDetall.addEventListener("click", ()=>{
+            location.assign(url);
+        })
+
         // Fiquem la tarjeta al contenidor
         cardContainer.appendChild(pokemonCard);
 
