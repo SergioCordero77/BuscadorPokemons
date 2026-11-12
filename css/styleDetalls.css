@@ -1,0 +1,197 @@
+/* ===== TEXT EN NEGRETAS ===== */
+.negreta {
+    font-weight: bold;
+}
+
+
+/* ===== RESET GENERAL ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== COS DEL DOCUMENT ===== */
+body {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    background: linear-gradient(135deg, #e0f3ff, #fff4d6);
+    min-height: 100vh;
+    padding: 40px 20px;
+    color: #333;
+
+    /* Centrem el contingut de la pàgina */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===== CONTENIDOR PRINCIPAL ===== */
+#container-detalls {
+    background: white;
+    border: 4px solid #ffcb05;
+    border-radius: 25px;
+    padding: 35px;
+    width: 100%;
+    max-width: 650px;
+
+    text-align: center;
+
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+    margin-bottom: 30px;
+}
+
+/* ===== TÍTOL PRINCIPAL ===== */
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #e63946;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    text-shadow: 2px 3px 0 #ffcb05;
+}
+
+/* ===== NOM DEL POKÉMON ===== */
+#container-detalls h2 {
+    color: #e63946;
+    font-size: 2rem;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+
+/* ===== IMATGE DEL POKÉMON ===== */
+#container-detalls img {
+    width: 220px;
+    height: 220px;
+    object-fit: contain;
+    display: block;
+    margin: 10px auto 20px auto;
+
+    transition: transform 0.3s ease;
+}
+
+#container-detalls img:hover {
+    transform: scale(1.15);
+}
+
+/* ===== INFORMACIÓ DEL POKÉMON ===== */
+#container-detalls p {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #555;
+    background-color: #fff4cc;
+
+    padding: 15px;
+    margin: 15px auto;
+
+    border-radius: 12px;
+    border: 2px solid #ffcb05;
+}
+
+/* ===== TAULA D'HABILITATS ===== */
+#container-detalls table {
+    width: 100%;
+    margin: 25px auto 10px auto;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+/* Cel·les de la taula */
+#container-detalls th {
+    padding: 14px;
+    border: 2px solid #ffcb05;
+    font-size: 1rem;
+    text-transform: capitalize;
+}
+
+/* Capçalera de la taula */
+#container-detalls th.negreta {
+    background: linear-gradient(135deg, #e63946, #c1121f);
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Files de dades */
+#container-detalls tr:not(:first-child) th {
+    background-color: #fff4cc;
+    color: #555;
+}
+
+/* Efecte hover de les files */
+#container-detalls tr:not(:first-child):hover th {
+    background-color: #ffe18a;
+}
+
+/* ===== BOTÓ TORNAR ===== */
+.boto-tornar {
+    background: linear-gradient(135deg, #e63946, #c1121f);
+    color: white;
+
+    border: 3px solid #ffcb05;
+    border-radius: 25px;
+
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    box-shadow: 0 4px 0 #a30d18;
+    transition: all 0.2s ease;
+}
+
+/* Efecte hover */
+.boto-tornar:hover {
+    background: linear-gradient(135deg, #ffcb05, #f4a900);
+    color: #333;
+
+    transform: translateY(-3px);
+    box-shadow: 0 7px 0 #c58b00;
+}
+
+/* Efecte al prémer */
+.boto-tornar:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #a30d18;
+}
+
+/* ===== ACCESSIBILITAT DEL BOTÓ ===== */
+.boto-tornar:focus-visible {
+    outline: 3px solid #333;
+    outline-offset: 4px;
+}
+
+/* ===== DISSENY RESPONSIVE ===== */
+@media (max-width: 600px) {
+
+    body {
+        padding: 25px 15px;
+    }
+
+    #container-detalls {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    #container-detalls h2 {
+        font-size: 1.6rem;
+    }
+
+    #container-detalls img {
+        width: 180px;
+        height: 180px;
+    }
+
+    #container-detalls th {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}

@@ -11,6 +11,7 @@ const cardContainer = document.querySelector("#pokemons-container");
 
 const canviarQuantitat = () => {
 
+    //Buidem el contenidor
     cardContainer.replaceChildren();
 
     obtenirPokemons();
