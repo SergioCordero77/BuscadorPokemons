@@ -11,7 +11,7 @@ const botoTornar = document.querySelector("#btn-tornar");
 
 const recuperarPokemon = async function name() {
     
-    // Recuperamos el parámetro name de la URL
+    // Recuperem el paràmetre name de la URL
     const parametres = new URLSearchParams(window.location.search);
 
     const nomPokemon = parametres.get("name");
