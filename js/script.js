@@ -4,6 +4,8 @@
 
 const opcionsQuantitat = document.querySelector("#options");
 const cardContainer = document.querySelector("#pokemons-container");
+const botoPrev = document.querySelector("#prv-btn");
+const botoNext = document.querySelector("#next-btn");
 
 /* ==========================================================================
    Funcions
@@ -100,4 +102,12 @@ obtenirPokemons();
    Events
    ========================================================================== */
 
-opcionsQuantitat.addEventListener("change", canviarQuantitat)
+opcionsQuantitat.addEventListener("change", canviarQuantitat);
+
+botoPrev.addEventListener("click", () =>{
+    
+});
+
+botoNext.addEventListener("click", () =>{
+    
+});

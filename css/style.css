@@ -199,6 +199,76 @@ label {
     outline-offset: 4px;
 }
 
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 30px auto;
+}
+
+.pagination button {
+    margin: 0;
+}
+
+/* ===== BOTONS DE PAGINACIÓ ===== */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 35px auto;
+}
+
+/* Estil dels botons */
+.pagination button {
+    background: linear-gradient(135deg, #e63946, #c1121f);
+    color: white;
+    border: 3px solid #ffcb05;
+    border-radius: 25px;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 4px 0 #a30d18;
+    transition: all 0.2s ease;
+}
+
+/* Efecte en passar el ratolí */
+.pagination button:hover {
+    background: linear-gradient(135deg, #ffcb05, #f4a900);
+    color: #333;
+    transform: translateY(-3px);
+    box-shadow: 0 7px 0 #c58b00;
+}
+
+/* Efecte en prémer els botons */
+.pagination button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #a30d18;
+}
+
+/* Efecte de focus accessible */
+.pagination button:focus-visible {
+    outline: 3px solid #333;
+    outline-offset: 4px;
+}
+
+/* Adaptació dels botons a mòbils */
+@media (max-width: 400px) {
+    .pagination {
+        gap: 12px;
+    }
+
+    .pagination button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
 
 /* ===== RESPONSIVE ===== */
 
