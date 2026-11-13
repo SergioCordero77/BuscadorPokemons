@@ -80,3 +80,12 @@ const recuperarPokemon = async function name() {
 
 //Executem
 recuperarPokemon();
+
+/* ==========================================================================
+   Events
+   ========================================================================== */
+
+//Botó tornar a la pàgina principal
+botoTornar.addEventListener("click", () => {
+    location.assign("index.html");
+})

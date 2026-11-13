@@ -93,9 +93,11 @@ h1 {
 #container-detalls table {
     width: 100%;
     margin: 25px auto 10px auto;
-    border-collapse: collapse;
-    overflow: hidden;
+    border-collapse: separate;
+    border-spacing: 0;
     border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid #ffcb05;
 }
 
 /* Cel·les de la taula */
@@ -123,6 +125,23 @@ h1 {
 /* Efecte hover de les files */
 #container-detalls tr:not(:first-child):hover th {
     background-color: #ffe18a;
+}
+
+/* Arrodonir els cel·les */
+#container-detalls tr:first-child th:first-child {
+    border-top-left-radius: 10px;
+}
+
+#container-detalls tr:first-child th:last-child {
+    border-top-right-radius: 10px;
+}
+
+#container-detalls tr:last-child th:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+#container-detalls tr:last-child th:last-child {
+    border-bottom-right-radius: 10px;
 }
 
 /* ===== BOTÓ TORNAR ===== */
