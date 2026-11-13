@@ -7,16 +7,25 @@ const cardContainer = document.querySelector("#pokemons-container");
 const botoPrev = document.querySelector("#prv-btn");
 const botoNext = document.querySelector("#next-btn");
 
+let valorOpcions = opcionsQuantitat.value;
+let urlEndPoint = `https://pokeapi.co/api/v2/pokemon?limit=${valorOpcions}`;
+let nextEndpoint = null;
+let prevEndpoint = null;
+
+
 /* ==========================================================================
    Funcions
    ========================================================================== */
 
 const canviarQuantitat = () => {
 
+    valorOpcions = opcionsQuantitat.value;
+    urlEndPoint = `https://pokeapi.co/api/v2/pokemon?limit=${valorOpcions}`;
+
     //Buidem el contenidor
     cardContainer.replaceChildren();
 
-    obtenirPokemons();
+    obtenirPokemons(urlEndPoint);
 }
 
 const mostrarPokemons = async function(dada){
@@ -68,20 +77,21 @@ const mostrarPokemons = async function(dada){
     }
 }
 
-const obtenirPokemons = async function(){
-    const valorOpcions = opcionsQuantitat.value;
-
-    const urlEndPoint = `https://pokeapi.co/api/v2/pokemon?limit=${valorOpcions}`;
+const obtenirPokemons = async function(EndPoint){
     
     try{
         // Obtenim dades del EndPoint
-        const resultat = await fetch (urlEndPoint);
+        const resultat = await fetch (EndPoint);
 
         if (!resultat.ok) {
             throw new Error("Error al carregar les dades");
         }
 
         const dades = await resultat.json();
+
+        //Assignació de endpoints
+        nextEndpoint = dades.next;
+        prevEndpoint = dades.previous;
 
         // For per agafar un a un els pokemons
         for(let dada of dades.results){
@@ -96,7 +106,7 @@ const obtenirPokemons = async function(){
 }
 
 //Executem la funció
-obtenirPokemons();
+obtenirPokemons(urlEndPoint);
 
 /* ==========================================================================
    Events
@@ -105,9 +115,19 @@ obtenirPokemons();
 opcionsQuantitat.addEventListener("change", canviarQuantitat);
 
 botoPrev.addEventListener("click", () =>{
-    
+
+    if(prevEndpoint){
+        cardContainer.replaceChildren();
+        obtenirPokemons(prevEndpoint);
+    }
+
 });
 
 botoNext.addEventListener("click", () =>{
     
+    if(nextEndpoint){
+        cardContainer.replaceChildren();
+        obtenirPokemons(nextEndpoint);
+    }
+
 });
